@@ -11,9 +11,6 @@
   Require ip {{ piwik.settings.ip_range }}
   {% else %}
   Allow from All
-  {% if ansible_distribution in [ 'CentOS', 'RedHat', 'Fedora' ] %}
-  Require all granted
-  {% endif %}
   {% endif %}
 	<Files "piwik.php"> 
 	     Order Deny,Allow 
