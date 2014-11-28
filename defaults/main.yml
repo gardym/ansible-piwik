@@ -8,7 +8,7 @@ piwik:
     piwik_user: piwik
     piwik_pass: piwik
     piwik_db: piwik
-    service: 'mysql'
+    service: 'mysqld'
   settings:
     # Latest Piwik build
     url: 'http://builds.piwik.org'
@@ -21,9 +21,9 @@ piwik:
       - 'tmp'
       - 'config'
   apache:
-    user: 'www-data'
-    group: 'www-data'
-    service: 'apache2'
+    user: 'apache'
+    group: 'apache'
+    service: 'httpd'
   geoip: 
     url: 'http://geolite.maxmind.com/download/geoip/database'
     file: 'GeoLiteCity.dat.gz'
@@ -34,7 +34,7 @@ piwik:
         - 'apache2'
         - 'php5'
         - 'libapache2-mod-php5'
-        - 'php5-mysql'
+        - 'php5-mysqlnd'
         - 'php5-gd'
         - 'php5-geoip'
         - 'php5-ldap'
@@ -48,13 +48,13 @@ piwik:
         - 'httpd'
         - 'php'
         - 'php-common'
-        - 'php-mysqlnd'
         - 'php-gd'
         - 'php-pecl-geoip'
         - 'php-ldap'
         - 'php-mbstring'
+        - 'php-mysql'
       general:
         - 'unzip'
       mysql:
-        - 'community-mysql-server'
+        - 'mysql-server'
         - 'MySQL-python' # Install MySQLdb Python package, mandatory to manage MySQL with ansible
